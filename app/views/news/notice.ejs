@@ -45,16 +45,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% if (news) {%>
-                    <%for(var i=0; i < news.length; i++) { %>
-                    <tr>
-                    <th scope="row"><%= news[i].id%></th>
-                    <td><%= news[i].title%></td>
-                    <td><%= news[i].notice%></td>
-                    <td><%= news[i].created_at%></td>
-                    <% } %>
+                    <% if (notice) {%>
+                        <%for(var i=0; i < notice.length; i++) { %>
+                        <tr>
+                        <th scope="row"><%= notice[i].id%></th>
+                        <td><%= notice[i].title%></td>
+                        <td><%= notice[i].notice%></td>
+                        <td><%= notice[i].created_at%></td>
+                        <% } %>
                     <% } else {%>
-                        <%= 'News não foi recebido'%>
+                        <%= 'Notice não foi recebido'%>
                         <%= error%>
                     <% } %>
                 </tbody>
