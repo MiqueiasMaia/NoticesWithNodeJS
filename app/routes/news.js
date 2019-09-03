@@ -1,9 +1,9 @@
 module.exports = function (app) {
     app.get('/news', function(req, res) {
-        var database = app.config.database();
-        var newsModel = new app.app.models.NewsDAO(database);
-        newsModel.getNews(function(error, result){
-            res.render('news/news', { news : result, error : error });
-        });
+        app.app.controllers.news.news(app, req, res);
+    });
+
+    app.get('/notice', function(req,res){
+        app.app.controllers.news.notices(app, req, res);
     });
 }
